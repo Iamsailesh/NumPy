@@ -18,25 +18,41 @@ print(rainfall)
 print("Number of days in the month: ",rainfall.size)
 
 meanRainfall = np.mean(rainfall)
-print("Mean of the rainfalls in month is :", meanRainfall)
+print("Mean of the rainfalls in month  :", meanRainfall)
 
 maxRainfall = np.max(rainfall)
-print("the max amount of rainfall is", maxRainfall)
+print("the max amount of rainfall :", maxRainfall)
 
 minRainfall = np.min(rainfall)
-print("the min amount of rainfall is :", minRainfall)
+print("the min amount of rainfall : :", minRainfall)
 
 totalRainfall = np.sum(rainfall)
-print("Total amount of rainfall overall the month is: ", totalRainfall)
+print("Total amount of rainfall overall the month : ", totalRainfall)
 
-rainfall[1] = 0
-print(rainfall)
+# rainfall[1] = 0
+# print(rainfall)
 
 noRainfall = np.sum(rainfall == 0)
-print("No of days with no rainfall is: ",noRainfall)
+print("No of days with no rainfall : ",noRainfall)
 
 heavyRainfall = np.sum( rainfall >= 30)
-print("No of days with heavy rainfall is :", heavyRainfall)
+print("No of days with heavy rainfall :", heavyRainfall)
+
+midRainfall = np.sum((rainfall < 30) & (rainfall >20))
+print("No of days with mid rainfall : ", midRainfall)
+
+rolling_3dayRainfall = []
+
+for i in range(len(rainfall)-2):
+    rolling_3daySum = rainfall[i] + rainfall[i+1] + rainfall [i+2]
+    rolling_3dayRainfall.append(rolling_3daySum)
+
+rolling_3dayRainfall = np.array(rolling_3dayRainfall)
+print("3 days rolling rainfall :",rolling_3dayRainfall)
+print("number of values: ", len(rolling_3dayRainfall))
+
+
+
 
 
 
