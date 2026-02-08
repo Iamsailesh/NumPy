@@ -19,3 +19,7 @@ for districtwise in rainfall_2d:
     rolling_7day_2d.append(rolling_7day_district)
 rolling_7day_2d = np.array(rolling_7day_2d)
 print("The rolling 7 day in 2d matrix seems like: ",rolling_7day_2d)
+
+#accessing the elements of 2d array
+
+print([0])
